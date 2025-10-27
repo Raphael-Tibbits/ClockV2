@@ -1,0 +1,30 @@
+Drill report for card.kicad_pcb
+Created on Fri Aug  8 15:05:19 2025
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'card-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (226 holes)
+    T2  0.890mm  0.0350"  (4 holes)
+    T3  1.000mm  0.0394"  (72 holes)
+    T4  1.100mm  0.0433"  (4 holes)
+    T5  2.010mm  0.0791"  (2 holes)
+    T6  3.200mm  0.1260"  (4 holes)
+
+    Total plated holes count 312
+
+
+Drill file 'card-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  2.850mm  0.1122"  (2 holes)
+
+    Total unplated holes count 2

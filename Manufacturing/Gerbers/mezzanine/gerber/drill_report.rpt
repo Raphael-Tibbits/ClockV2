@@ -1,0 +1,26 @@
+Drill report for mezzanine.kicad_pcb
+Created on Fri Aug  8 15:05:41 2025
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'mezzanine-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.400mm  0.0157"  (174 holes)
+    T2  0.800mm  0.0315"  (3 holes)
+    T3  1.000mm  0.0394"  (16 holes)
+
+    Total plated holes count 193
+
+
+Drill file 'mezzanine-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+
+    Total unplated holes count 0

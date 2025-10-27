@@ -1,0 +1,11 @@
+LTspice 24.0.9 for Windows
+Circuit: * C:\Users\raphg\OneDrive\Documents\KiCad\7.0\projects\ClockV2\Sims\AM Radio.asc
+Start Time: Sat Aug 30 02:03:21 2025
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = modified trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.148 seconds.
+
