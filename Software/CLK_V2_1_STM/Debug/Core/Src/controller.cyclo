@@ -1,0 +1,8 @@
+../Core/Src/controller.cpp:49:7:float temp_from_adc(uint16_t)	1
+../Core/Src/controller.cpp:64:7:float get_rtc_seconds()	1
+../Core/Src/controller.cpp:78:1:Heater_controller::Heater_controller(float, float, float)	1
+../Core/Src/controller.cpp:94:1:Heater_controller::~Heater_controller()	1
+../Core/Src/controller.cpp:98:6:void Heater_controller::update()	5
+../Core/Src/controller.cpp:128:7:float inverse_lookup(const float*, const float*, size_t, float)	9
+../Core/Src/controller.cpp:146:6:void Heater_controller::set_heater_power(float)	2
+../Core/Src/controller.cpp:157:7:float Heater_controller::get_temp()	1

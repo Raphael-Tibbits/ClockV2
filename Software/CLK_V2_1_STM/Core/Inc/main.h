@@ -59,22 +59,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define DISP_SDAT_Pin GPIO_PIN_14
-#define DISP_SDAT_GPIO_Port GPIOC
-#define DISP_ORCLK_Pin GPIO_PIN_15
-#define DISP_ORCLK_GPIO_Port GPIOC
 #define Light_sensor_Pin GPIO_PIN_1
 #define Light_sensor_GPIO_Port GPIOA
 #define Temp_sensor_Pin GPIO_PIN_3
 #define Temp_sensor_GPIO_Port GPIOA
 #define Heater_Pin GPIO_PIN_1
 #define Heater_GPIO_Port GPIOB
-#define DISP_SCLK_Pin GPIO_PIN_8
-#define DISP_SCLK_GPIO_Port GPIOA
 #define DISP_OE_Pin GPIO_PIN_11
 #define DISP_OE_GPIO_Port GPIOA
 #define LED_Front_Pin GPIO_PIN_12
 #define LED_Front_GPIO_Port GPIOA
+#define DISP_SCLK_Pin GPIO_PIN_3
+#define DISP_SCLK_GPIO_Port GPIOB
+#define DISP_ORCLK_Pin GPIO_PIN_4
+#define DISP_ORCLK_GPIO_Port GPIOB
+#define DISP_SDAT_Pin GPIO_PIN_5
+#define DISP_SDAT_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

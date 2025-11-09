@@ -1,0 +1,20 @@
+../Core/Src/main.cpp:122:5:int main()	1
+../Core/Src/main.cpp:217:6:void SystemClock_Config()	4
+../Core/Src/main.cpp:266:13:void MX_ADC1_Init()	3
+../Core/Src/main.cpp:324:13:void MX_I2C1_Init()	4
+../Core/Src/main.cpp:372:13:void MX_RTC_Init()	4
+../Core/Src/main.cpp:436:13:void MX_SPI3_Init()	2
+../Core/Src/main.cpp:476:13:void MX_TIM1_Init()	8
+../Core/Src/main.cpp:560:13:void MX_USART2_UART_Init()	2
+../Core/Src/main.cpp:595:13:void MX_GPIO_Init()	1
+../Core/Src/main.cpp:642:6:void StartIdleTask(void*)	1
+../Core/Src/main.cpp:670:6:void StartBlinkTask(void*)	1
+../Core/Src/main.cpp:755:6:void send_to_disp(uint8_t*)	1
+../Core/Src/main.cpp:767:6:void StartDisplay(void*)	2
+../Core/Src/main.cpp:808:6:void StartHeater(void*)	1
+../Core/Src/main.cpp:833:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	2
+../Core/Src/main.cpp:851:6:void Error_Handler()	1
+../Core/Src/main.cpp:860:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/main.cpp:860:1:void __static_initialization_and_destruction_1()	1
+../Core/Src/main.cpp:860:1:cpp)	1
+../Core/Src/main.cpp:860:1:cpp)	1
