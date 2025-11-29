@@ -29,6 +29,7 @@
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
+typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -56,32 +57,47 @@ TIM_HandleTypeDef htim1;
 
 UART_HandleTypeDef huart2;
 
-/* Definitions for IdleTask */
-osThreadId_t IdleTaskHandle;
-const osThreadAttr_t IdleTask_attributes = {
-  .name = "IdleTask",
-  .stack_size = 256 * 4,
+/* Definitions for uartTask */
+osThreadId_t uartTaskHandle;
+const osThreadAttr_t uartTask_attributes = {
+  .name = "uartTask",
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for BlinyBill */
 osThreadId_t BlinyBillHandle;
+uint32_t BlinyBillBuffer[ 256 ];
+osStaticThreadDef_t BlinyBillControlBlock;
 const osThreadAttr_t BlinyBill_attributes = {
   .name = "BlinyBill",
-  .stack_size = 256 * 4,
+  .cb_mem = &BlinyBillControlBlock,
+  .cb_size = sizeof(BlinyBillControlBlock),
+  .stack_mem = &BlinyBillBuffer[0],
+  .stack_size = sizeof(BlinyBillBuffer),
   .priority = (osPriority_t) osPriorityLow1,
 };
 /* Definitions for DisplayMultiple */
 osThreadId_t DisplayMultipleHandle;
+uint32_t DisplayMultipleBuffer[ 256 ];
+osStaticThreadDef_t DisplayMultipleControlBlock;
 const osThreadAttr_t DisplayMultiple_attributes = {
   .name = "DisplayMultiple",
-  .stack_size = 256 * 4,
+  .cb_mem = &DisplayMultipleControlBlock,
+  .cb_size = sizeof(DisplayMultipleControlBlock),
+  .stack_mem = &DisplayMultipleBuffer[0],
+  .stack_size = sizeof(DisplayMultipleBuffer),
   .priority = (osPriority_t) osPriorityNormal7,
 };
 /* Definitions for HeaterControl */
 osThreadId_t HeaterControlHandle;
+uint32_t HeaterControlBuffer[ 256 ];
+osStaticThreadDef_t HeaterControlControlBlock;
 const osThreadAttr_t HeaterControl_attributes = {
   .name = "HeaterControl",
-  .stack_size = 256 * 4,
+  .cb_mem = &HeaterControlControlBlock,
+  .cb_size = sizeof(HeaterControlControlBlock),
+  .stack_mem = &HeaterControlBuffer[0],
+  .stack_size = sizeof(HeaterControlBuffer),
   .priority = (osPriority_t) osPriorityAboveNormal,
 };
 /* USER CODE BEGIN PV */
@@ -173,8 +189,8 @@ int main(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of IdleTask */
-  IdleTaskHandle = osThreadNew(StartIdleTask, NULL, &IdleTask_attributes);
+  /* creation of uartTask */
+  uartTaskHandle = osThreadNew(StartIdleTask, NULL, &uartTask_attributes);
 
   /* creation of BlinyBill */
   BlinyBillHandle = osThreadNew(StartBlinkTask, NULL, &BlinyBill_attributes);
@@ -653,8 +669,8 @@ void StartIdleTask(void *argument)
 		HAL_RTC_GetDate(&hrtc, &today, RTC_FORMAT_BIN);
 
 
-		sprintf((char*)message_buffer, "the time: %02u:%02u:%02u.%04lu\t\toven Temp: %2.2f\r", now.Hours, now.Minutes, now.Seconds, now.SubSeconds, Oven.get_temp());
-		HAL_UART_Transmit(&huart2, message_buffer , sizeof(message_buffer), HAL_MAX_DELAY);
+		sprintf((char*)message_buffer, "the time: %02u:%02u:%02u.%04lu\toven Temp: %2.2f\r", now.Hours, now.Minutes, now.Seconds, now.SubSeconds, Oven.get_temp());
+//		HAL_UART_Transmit(&huart2, message_buffer , sizeof(message_buffer), HAL_MAX_DELAY);
 		osDelay(50);
 	}
   /* USER CODE END 5 */
@@ -690,10 +706,10 @@ void StartBlinkTask(void *argument)
 #define DISP_DP_MSK 0x02
 #define DISP_Digit1 0x0C
 #define DISP_Digit2 0x03
-#define DISP_Digit3 ~0xC0
-#define DISP_Digit4 ~0x30
-#define DISP_Digit5 ~0x0C
-#define DISP_Digit6 ~0x03
+#define DISP_Digit3 ((uint8_t)(~0xC0))
+#define DISP_Digit4 ((uint8_t)(~0x30))
+#define DISP_Digit5 ((uint8_t)(~0x0C))
+#define DISP_Digit6 ((uint8_t)(~0x03))
 
 
 
@@ -718,39 +734,6 @@ const uint8_t int_2_segment[] = {
 };
 
 
-//constexpr uint8_t char_to_segment(char c){
-//    // Digits
-//    if(c >= '0' && c <= '9') return int_2_segment[c - '0'];
-//
-//    // Uppercase letters and symbols
-//    switch(c)
-//    {
-//        case 'A': case 'a': return 10;
-//        case 'B': case 'b': return 11;
-//        case 'C': case 'c': return 12;
-//        case 'D': case 'd': return 13;
-//        case 'E': case 'e': return 14;
-//        case 'F': case 'f': return 15;
-//        case 'H': case 'h': return 16;
-//        case 'I': case 'i': return 17;
-//        case 'J': case 'j': return 18;
-//        case 'L': case 'l': return 19;
-//        case 'N': case 'n': return 20;
-//        case 'O': case 'o': return 21;
-//        case 'P': case 'p': return 22;
-//        case 'R': case 'r': return 23;
-//        case 'S': case 's': return 24;
-//        case 'T': case 't': return 25;
-//        case 'U': case 'u': return 26;
-//        case 'Y': case 'y': return 27;
-//        case 'Z': case 'z': return 28;
-//        case '-': return 29;
-//        case '_': return 30;
-//        case ' ': return 0xFF;
-//    }
-//
-//    return 0xFF; // unsupported
-//}
 
 void send_to_disp(uint8_t* sft_buf){
 
@@ -775,21 +758,23 @@ void StartDisplay(void *argument)
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, GPIO_PIN_RESET);
 
 	/* Infinite loop */
-	uint8_t num = 'a';
+	uint8_t num = 0;
+	uint8_t shift_buffer[3];
 	for(;;)
 	{
 		for(int i = 0; i<100; i++){
 
-			uint8_t shift_buffer[3] = {0x00, DISP_Digit1, ~int_2_segment[num%10]};
+			shift_buffer[1] = DISP_Digit1;
+			shift_buffer[2] = 0xFF^int_2_segment[(num)%10];
 
-			send_to_disp(shift_buffer);
+//			send_to_disp(shift_buffer);
 
 			osDelay(1);
 
 			shift_buffer[1] = DISP_Digit2;
-			shift_buffer[2] = ~int_2_segment[(num/10)%10];
+			shift_buffer[2] = 0xFF^int_2_segment[(num/10)%10];
 
-			send_to_disp(shift_buffer);
+//			send_to_disp(shift_buffer);
 
 			osDelay(1);
 		}
@@ -816,8 +801,8 @@ void StartHeater(void *argument)
 	/* Infinite loop */
 	for(;;)
 	{
-
-		osDelay(1);
+		Oven.update();
+		osDelay(40);
 	}
   /* USER CODE END StartHeater */
 }
