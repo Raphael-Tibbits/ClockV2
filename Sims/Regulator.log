@@ -1,0 +1,4 @@
+LTspice 24.0.9 for Windows
+Circuit: * C:\Users\raphg\OneDrive\Documents\KiCad\7.0\projects\ClockV2\Sims\Regulator.asc
+Start Time: Mon Dec  1 21:01:23 2025
+Fatal Error: This circuit does not contain a node other than node "0" (GND)

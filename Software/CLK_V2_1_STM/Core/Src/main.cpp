@@ -657,20 +657,20 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartIdleTask */
 void StartIdleTask(void *argument)
 {
-  /* USER CODE BEGIN 5 */
+//  /* USER CODE BEGIN 5 */
 	uint8_t message_buffer[63] = "Hello World\n\r";
-
+//
 	HAL_UART_Transmit(&huart2, message_buffer , 14, HAL_MAX_DELAY);
 
 	/* Infinite loop */
 	for(;;)
 	{
-		HAL_RTC_GetTime(&hrtc, &now, RTC_FORMAT_BIN);
-		HAL_RTC_GetDate(&hrtc, &today, RTC_FORMAT_BIN);
-
-
-		sprintf((char*)message_buffer, "the time: %02u:%02u:%02u.%04lu\toven Temp: %2.2f\r", now.Hours, now.Minutes, now.Seconds, now.SubSeconds, Oven.get_temp());
-//		HAL_UART_Transmit(&huart2, message_buffer , sizeof(message_buffer), HAL_MAX_DELAY);
+//		HAL_RTC_GetTime(&hrtc, &now, RTC_FORMAT_BIN);
+//		HAL_RTC_GetDate(&hrtc, &today, RTC_FORMAT_BIN);
+//
+//
+//		sprintf((char*)message_buffer, "the time: %02u:%02u:%02u.%04lu\toven Temp: %2.2f\r", now.Hours, now.Minutes, now.Seconds, now.SubSeconds, Oven.get_temp());
+////		HAL_UART_Transmit(&huart2, message_buffer , sizeof(message_buffer), HAL_MAX_DELAY);
 		osDelay(50);
 	}
   /* USER CODE END 5 */
@@ -793,16 +793,16 @@ void StartDisplay(void *argument)
 void StartHeater(void *argument)
 {
   /* USER CODE BEGIN StartHeater */
-
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 0);
-
+//
+//	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+//	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, 0);
+//
 
 	/* Infinite loop */
 	for(;;)
 	{
-		Oven.update();
-		osDelay(40);
+//		Oven.update();
+//		osDelay(40);
 	}
   /* USER CODE END StartHeater */
 }

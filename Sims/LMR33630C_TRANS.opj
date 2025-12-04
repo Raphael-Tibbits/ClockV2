@@ -1,0 +1,62 @@
+(ExpressProject "LMR33630C_TRANS"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S009 (3878102)  [8/4/2020]-[08/31/20]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\lmr33630c_trans.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (RootChangedForceReNetlist "x")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Layout")
+  (Folder "Outputs")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmr33630c_trans-pspicefiles\startup\trans.sim"
+        (DisplayName "Startup-trans")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmr33630c_trans-pspicefiles\steady_state\trans.sim"
+        (DisplayName "Steady_State-trans")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\lmr33630c_trans-pspicefiles\startup_ibb\trans.sim"
+        (DisplayName "Startup_IBB-trans")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\lmr33630c_trans-pspicefiles\startup\trans.sim"))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File ".\lmr33630c_trans.lib"
+        (Type "PSpiceLibrary")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
+    (File ".\lmr33630crnx_trans.olb"
+      (Type "Schematic Library")))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Select "Design Resources"
+         "D:\KARTHIK\SEP2020\Release\LMR33630C\LMR33630C_PSPICE_TRANS\lmr33630c_trans.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -4 -23 0 200 0 404"))
+      (Tab 0)))
+  (MPSSessionName "x0252215")
+  (PartMRUSelector
+    (LMR33630CRNX_TRANS
+      (FullPartName "LMR33630CRNXR.Normal")
+      (LibraryName
+         "C:\ELABTRANS_WS\ELABTRANS_DS\PART_NUMBERS\LMR33630C\RELEASE_SANKALP\PSPICE\LMR33630C_PSPICE_TRANS\LMR33630CRNX_TRANS.OLB")
+      (DeviceIndex "0")))
+  (Folder "Logs"))
