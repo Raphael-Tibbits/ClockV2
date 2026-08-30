@@ -1,11 +1,50 @@
 LTspice 24.0.9 for Windows
 Circuit: * C:\Users\raphg\OneDrive\Documents\KiCad\7.0\projects\ClockV2\Sims\Draft5.asc
-Start Time: Wed Dec  3 13:13:44 2025
+Start Time: Sun Apr 26 17:30:48 2026
 solver = Normal
 Maximum thread count: 16
+
+
+
+Direct Newton iteration for .op point succeeded.
+.step r_pot=1
+
+
+
+.step r_pot=1001
+
+
+
+.step r_pot=2001
+
+
+
+.step r_pot=3001
+
+
+
+.step r_pot=4001
+
+
+
+.step r_pot=5001
+
+
+
+.step r_pot=6001
+
+
+
+.step r_pot=7001
+
+
+
+.step r_pot=8001
+
+
+
+.step r_pot=9001
 tnom = 27
 temp = 27
 method = modified trap
-Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.041 seconds.
-
+Fatal Error: r13: Resistance must not be zero.

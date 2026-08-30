@@ -1,0 +1,10 @@
+#Digilent WaveForms Logic Analyzer UART
+#Device Name: Discovery2
+#Serial Number: SN:210321B3DC42
+#Date Time: 2025-10-07 15:57:37.1000
+
+Time (s),Data
+-0.0003425,h01
+-0.0002525,hDF
+-0.0001625,h0A
+-7.25e-05,h0D
