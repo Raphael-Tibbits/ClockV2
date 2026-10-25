@@ -4410,22 +4410,22 @@
 	)
 	(global_label "I2C SCL"
 		(shape input)
-		(at 163.83 85.09 0)
+		(at 133.35 120.65 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "47ba64e8-86a8-4392-b8d3-5e441c610467")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 174.3747 85.09 0)
+			(at 122.8053 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -4476,22 +4476,22 @@
 	)
 	(global_label "I2C SDA"
 		(shape input)
-		(at 163.83 82.55 0)
+		(at 133.35 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "802b7337-e738-441a-90ec-4fedd3da588e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 174.4352 82.55 0)
+			(at 122.7448 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5076,7 +5076,7 @@
 		(at 44.45 187.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -5273,7 +5273,7 @@
 		(at 44.45 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -5405,7 +5405,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5b8c5894-be2f-457e-879d-3b3292b22fa9")
@@ -7510,7 +7510,7 @@
 		(at 68.58 187.96 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)

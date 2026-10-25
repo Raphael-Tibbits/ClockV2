@@ -3009,6 +3009,16 @@
 		)
 		(uuid "4273b99f-48e3-44cd-874f-65d8ba299424")
 	)
+	(label "1PPS"
+		(at 193.04 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "47efccab-a9b0-4ba9-910f-35ec539edfa0")
+	)
 	(label "LED2"
 		(at 193.04 93.98 0)
 		(effects
@@ -3232,28 +3242,6 @@
 		(uuid "3a66f701-c796-400b-899a-f683fbf7e40f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 204.1289 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "1pps"
-		(shape input)
-		(at 193.04 99.06 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "47de0a47-a5b6-4520-9c7b-defd1cfed5d1")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 200.5608 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
